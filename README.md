@@ -1,1 +1,2 @@
-# my name is pardeep gonsalwis i am alone i need some boom boom 
+# my name is pardeep taya ror kumar
+# pake haryana wala 
