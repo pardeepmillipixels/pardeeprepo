@@ -1,0 +1,39 @@
+{
+	"id": "a8e1c8c6-1d43-a39c-ed24-2403a6ed052f",
+	"name": "test",
+	"description": "",
+	"order": [
+		"ba9988a8-2ff0-9182-f5a5-ef6d27778e6e"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1505201520875,
+	"owner": "2274376",
+	"public": false,
+	"requests": [
+		{
+			"id": "ba9988a8-2ff0-9182-f5a5-ef6d27778e6e",
+			"name": "testpost",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium. Praesent neque quam, tincidunt nec leo eget, rutrum vehicula magna.\nMaecenas consequat elementum elit, id semper sem tristique et. Integer pulvinar enim quis consectetur interdum volutpat.",
+			"descriptionFormat": null,
+			"description": "The HTTP `POST` request method is meant to transfer data to a server \n(and elicit a response). What data is returned depends on the implementation\nof the server.\n\nA `POST` request can pass parameters to the server using \"Query String \nParameters\", as well as the Request Body. For example, in the following request,\n\n> POST /hi/there?hand=wave\n>\n> <request-body>\n\nThe parameter \"hand\" has the value \"wave\". The request body can be in multiple\nformats. These formats are defined by the MIME type of the request. The MIME \nType can be set using the ``Content-Type`` HTTP header. The most commonly used \nMIME types are:\n\n* `multipart/form-data`\n* `application/x-www-form-urlencoded`\n* `application/json`\n\nThis endpoint echoes the HTTP headers, request parameters, the contents of\nthe request body and the complete URI requested.",
+			"headers": "Content-Type: text/plain\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/post",
+			"preRequestScript": "",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\n\ntests['response has post data'] = _.has(responseJSON, 'data');\ntests['response matches the data posted'] = (responseJSON.data && responseJSON.data.length === 256);\n\ntests[\"content-type equals text/plain\"] = responseJSON && responseJSON.headers && (responseJSON.headers[\"content-type\"] === 'text/plain');",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "a8e1c8c6-1d43-a39c-ed24-2403a6ed052f",
+			"isFromCollection": true,
+			"collectionRequestId": "1eb1cf9d-2be7-4060-f554-73cd13940174"
+		}
+	]
+}
